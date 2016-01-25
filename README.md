@@ -21,3 +21,9 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 2. __Initial gulpfile:__ Added a task that tells you you've done it.
 	- A task named `default` is added, which simply logs the message "Gulp is running!"
 	- To test this, the command `gulp` is executed in the current directory.
+3. __Exploring Gulp Tasks:__ Building up Tasks using the basic Gulp functions of `gulp.task`, `gulp.src`, `gulp.dest`, and `gulp.watch`.
+	- Gulp task `copy`: Piping a `gulp.src` call straight into `gulp.dest`.
+		- Copies the HTML files right in `source/` into `public/`.
+	- Gulp task `watch`: Running a certain task or function whenever files matching a blob change by using `gulp.watch`.
+		- In this case, created two watches, one which watchs all the JS files, and one which watches all the SCSS files.  Changing any of either of those two will call the respective task or function.
+		- Just as an initial test, the optional options object was omitted.
