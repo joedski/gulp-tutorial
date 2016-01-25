@@ -1,0 +1,19 @@
+{
+  "name": "gulp-tutorial",
+  "version": "1.0.0",
+  "description": "Stepping through a simple Gulp.io Tutorial at https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "tutorial"
+  ],
+  "author": "JUSTIN REXROAD",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7"
+  }
+}
