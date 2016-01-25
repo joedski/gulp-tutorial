@@ -17,3 +17,7 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 	- `npm install -g gulp` to install Gulp globally because I didn't have it just yet.
 	- `npm install --save-dev gulp` to install Gulp also as a dev dependency.
 		- While technically not necessary if you've installed Gulp globally, this still allows anyone to pull down the project and just run `npm install --dev` and then run whatever npm script you have set to build it.
+	- Note: A bunch of empty files were stubbed in for later.
+2. __Initial gulpfile:__ Added a task that tells you you've done it.
+	- A task named `default` is added, which simply logs the message "Gulp is running!"
+	- To test this, the command `gulp` is executed in the current directory.
