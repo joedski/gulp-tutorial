@@ -27,3 +27,10 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 	- Gulp task `watch`: Running a certain task or function whenever files matching a blob change by using `gulp.watch`.
 		- In this case, created two watches, one which watchs all the JS files, and one which watches all the SCSS files.  Changing any of either of those two will call the respective task or function.
 		- Just as an initial test, the optional options object was omitted.
+4. __Actually Useful Tasks:__ Running `jshint` on save.
+	- The Gulp wrapper for JSHint is installed by running `npm install --save-dev gulp-jshint jshint-stylish`.
+		- Note: `jshint` was installed locally in this run through, but that project recommends you install `jshint` globally rather than just locally.
+	- the `default` task is rewritten to `watch`, while `watch` itself watches all the files matching `source/javascript/**/*.js` and piping them into jshint.
+	- Notice of course that changing any JS file runs the `jshint` task on all matched files!
+	- Also notice that the glob is copied in both places.  The glob could be different, though I'm not sure why you'd do that.
+	- Lastly, notice that just starting a watch doesn't do an initial run of the task that the watch triggers; that task is only run after a watched file changes!

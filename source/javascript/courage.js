@@ -1,0 +1,3 @@
+function courage() {
+	return 'link';
+}

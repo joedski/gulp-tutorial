@@ -1,0 +1,3 @@
+function wisdom() {
+	return 'zelda';
+}
