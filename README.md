@@ -45,3 +45,13 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 	- Note in the tutorial that [only some gulp plugins support source maps](https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support).  (okay, many plugins do.)
 	- Wrap the sourcemap calls around the sass call.
 	- The default behavior was to write the source map to the end of the CSS file, adding a path relative to the file destination is simplest way to write external maps.
+7. __Actually Useful Tasks 4:__ Concatting and Minifying JS.
+	- `npm install --save-dev gulp-concat gulp-uglify`
+	- Add a `build-js` task which does the following:
+		- Initializes source maps
+		- Concats all the given files into a single file named `bundle.js`
+		- Checks if the current environmnet is `production` and, if so, uglifies the JS, otherwise just passing it through.
+			- This can be set by running gulp with `--type production`
+		- Writing the source maps.
+		- Writing all files to the destination path.
+	- Add this new task to the `watch` task.
