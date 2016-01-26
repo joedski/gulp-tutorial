@@ -40,3 +40,8 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 		- It takes the style files, pipes them into SASS, and writes them to `public/assets/stylesheets`.
 	- Add that `build-css` task to the `watch` task.
 	- Now, changing a style file will trigger the running of the `build-css` task.
+6. __Actually Useful Tasks 3:__ Source maps!  Using 'gulp-sourcemaps', of course.
+	- `npm install --save-dev gulp-sourcemaps`
+	- Note in the tutorial that [only some gulp plugins support source maps](https://github.com/floridoo/gulp-sourcemaps/wiki/Plugins-with-gulp-sourcemaps-support).  (okay, many plugins do.)
+	- Wrap the sourcemap calls around the sass call.
+	- The default behavior was to write the source map to the end of the CSS file, adding a path relative to the file destination is simplest way to write external maps.

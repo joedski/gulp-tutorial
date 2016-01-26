@@ -4,6 +4,7 @@ var gulp = require( 'gulp' );
 var gutil = require( 'gulp-util' );
 var jshint = require( 'gulp-jshint' );
 var sass = require( 'gulp-sass' );
+var sourcemaps = require( 'gulp-sourcemaps' );
 
 // Set up a simple default task.
 // The default task is run whenever the dev executes `gulp` in the project directory.
@@ -25,7 +26,6 @@ gulp.task( 'watch', function() {
 
 gulp.task( 'jshint', function() {
 	return gulp.src( 'source/javascript/**/*.js' )
-		// Note the __call__ to the required jshint function.
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'jshint-stylish' ) )
 		;
@@ -33,7 +33,9 @@ gulp.task( 'jshint', function() {
 
 gulp.task( 'build-css', function() {
 	return gulp.src( 'source/scss/**/*.scss' )
+		.pipe( sourcemaps.init() )
 		.pipe( sass() )
+		.pipe( sourcemaps.write( '.' ) )
 		.pipe( gulp.dest( 'public/assets/stylesheets' ) )
 		;
 });

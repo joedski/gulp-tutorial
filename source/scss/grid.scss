@@ -1,0 +1,6 @@
+$grid-spacing: 10px;
+
+.container {
+	margin-left: (- $grid-spacing);
+	margin-right: (- $grid-spacing);
+}
