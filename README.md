@@ -34,3 +34,9 @@ I followed the steps, tagging them as I went for easy playback.  All step tags a
 	- Notice of course that changing any JS file runs the `jshint` task on all matched files!
 	- Also notice that the glob is copied in both places.  The glob could be different, though I'm not sure why you'd do that.
 	- Lastly, notice that just starting a watch doesn't do an initial run of the task that the watch triggers; that task is only run after a watched file changes!
+5. __Actually Useful Tasks 2:__ Compilling SASS and SCSS with `gulp-sass` or `gulp-ruby-sass`.
+	- Install with npm: `npm install --save-dev gulp-sass`
+	- Add `build-css` task.
+		- It takes the style files, pipes them into SASS, and writes them to `public/assets/stylesheets`.
+	- Add that `build-css` task to the `watch` task.
+	- Now, changing a style file will trigger the running of the `build-css` task.

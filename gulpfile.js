@@ -3,6 +3,7 @@
 var gulp = require( 'gulp' );
 var gutil = require( 'gulp-util' );
 var jshint = require( 'gulp-jshint' );
+var sass = require( 'gulp-sass' );
 
 // Set up a simple default task.
 // The default task is run whenever the dev executes `gulp` in the project directory.
@@ -19,9 +20,7 @@ gulp.task( 'copy', function() {
 // Run another task or a function when a javascript file changes.
 gulp.task( 'watch', function() {
 	gulp.watch( 'source/javascript/**/*.js', [ 'jshint' ] );
-	// gulp.watch( 'source/scss/**/*.scss', function shoutStyle() {
-	// 	gutil.log( 'A style file changed!' );
-	// });
+	gulp.watch( 'source/scss/**/*.scss', [ 'build-css' ] );
 });
 
 gulp.task( 'jshint', function() {
@@ -29,5 +28,12 @@ gulp.task( 'jshint', function() {
 		// Note the __call__ to the required jshint function.
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'jshint-stylish' ) )
+		;
+});
+
+gulp.task( 'build-css', function() {
+	return gulp.src( 'source/scss/**/*.scss' )
+		.pipe( sass() )
+		.pipe( gulp.dest( 'public/assets/stylesheets' ) )
 		;
 });
